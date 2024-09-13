@@ -1,0 +1,73 @@
+name: valo_hub
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP client for handling API requests and network calls.
+  dio: ^5.7.0
+
+  # For storing small amounts of data locally (key-value pairs).
+  shared_preferences: ^2.3.2
+
+  # Lightweight and fast NoSQL database for local storage.
+  hive: ^2.2.3
+
+  # Provides customizable smooth page indicators for PageView.
+  smooth_page_indicator: ^1.2.0+3
+
+  # Efficiently caches and loads images from the network.
+  cached_network_image: ^3.4.1
+
+  # State management solution using the BLoC (Business Logic Component) pattern.
+  flutter_bloc: ^8.1.6
+
+  # Automatically generates native splash screens for both Android and iOS.
+  flutter_native_splash: ^2.4.1
+
+  # Helps with responsive UI by adapting to different screen sizes and pixel densities.
+  flutter_screenutil: ^5.9.3
+
+  # A service locator for dependency injection and managing app-wide objects.
+  get_it: ^7.7.0
+
+  # Audio playback library supporting various formats and platforms.
+  just_audio: ^0.9.40
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  pretty_dio_logger: ^1.4.0
+
+  flutter_lints: ^4.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svgs/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
