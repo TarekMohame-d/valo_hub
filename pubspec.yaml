@@ -21,9 +21,6 @@ dependencies:
   # Lightweight and fast NoSQL database for local storage.
   hive: ^2.2.3
 
-  # Provides customizable smooth page indicators for PageView.
-  smooth_page_indicator: ^1.2.0+3
-
   # Efficiently caches and loads images from the network.
   cached_network_image: ^3.4.1
 
