@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:valo_hub/core/helpers/constants.dart';
 import 'package:valo_hub/core/helpers/extensions.dart';
+import 'package:valo_hub/core/helpers/shared_pref_helper.dart';
 import 'package:valo_hub/core/helpers/spacing.dart';
 import 'package:valo_hub/core/routing/routes.dart';
 import 'package:valo_hub/features/onboarding/ui/data/models/onboarding_model.dart';
@@ -164,6 +166,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         GestureDetector(
                           onTap: () async {
                             if (currentIndex == onboardingList.length - 1) {
+                              await SharedPrefHelper.setData(
+                                SharedPrefKeys.onBoarding,
+                                true,
+                              );
                               await context.pushNamedAndRemoveUntil(
                                 Routes.homeScreen,
                                 predicate: (Route<dynamic> route) => false,
