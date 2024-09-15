@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valo_hub/features/home/ui/home_screen.dart';
 
 import '../../features/onboarding/ui/onboarding_screen.dart';
 import 'routes.dart';
@@ -12,6 +13,10 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
           builder: (context) => const OnboardingScreen(),
+        );
+        case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
         );
       default:
         return null;
