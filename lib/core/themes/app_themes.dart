@@ -11,7 +11,20 @@ class AppThemes {
   static final ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: AppColors.scaffoldBlackColor,
+    scaffoldBackgroundColor: AppColors.scaffoldDarkColor,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: AppColors.crimsonRed,
+      unselectedItemColor: AppColors.soft,
+      enableFeedback: false,
+      showUnselectedLabels: false,
+      elevation: 0,
+      type: BottomNavigationBarType.fixed,
+      showSelectedLabels: true,
+      backgroundColor: AppColors.bottomNavigationBar,
+      selectedLabelStyle: TextStyle(
+        fontWeight: FontWeight.w600,
+      ),
+    ),
   );
 
   static final ThemeData lightTheme = ThemeData(
@@ -25,17 +38,17 @@ class AppThemes {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: isDarkTheme
-            ? AppColors.scaffoldBlackColor
+            ? AppColors.scaffoldDarkColor
             : AppColors.scaffoldLightColor,
         statusBarIconBrightness:
             isDarkTheme ? Brightness.light : Brightness.dark,
         systemNavigationBarColor: isDarkTheme
-            ? AppColors.scaffoldBlackColor
+            ? AppColors.scaffoldDarkColor
             : AppColors.scaffoldLightColor,
         systemNavigationBarIconBrightness:
             isDarkTheme ? Brightness.light : Brightness.dark,
         systemNavigationBarDividerColor: isDarkTheme
-            ? AppColors.scaffoldBlackColor
+            ? AppColors.scaffoldDarkColor
             : AppColors.scaffoldLightColor,
       ),
     );
