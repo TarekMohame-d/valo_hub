@@ -20,10 +20,21 @@ class AppThemes {
       elevation: 0,
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: true,
-      backgroundColor: AppColors.bottomNavigationBar,
+      backgroundColor: AppColors.bottomAndUpSystemColor,
       selectedLabelStyle: TextStyle(
         fontWeight: FontWeight.w600,
       ),
+    ),
+    tabBarTheme: TabBarTheme(
+      indicatorColor: AppColors.crimsonRed,
+      indicatorSize: TabBarIndicatorSize.label,
+      splashFactory: NoSplash.splashFactory,
+      dividerColor: Colors.transparent,
+      labelColor: AppColors.crimsonRed,
+      unselectedLabelColor: AppColors.soft,
+      tabAlignment: TabAlignment.start,
+      overlayColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) => Colors.transparent),
     ),
   );
 
@@ -38,17 +49,17 @@ class AppThemes {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: isDarkTheme
-            ? AppColors.scaffoldDarkColor
+            ? AppColors.bottomAndUpSystemColor
             : AppColors.scaffoldLightColor,
         statusBarIconBrightness:
             isDarkTheme ? Brightness.light : Brightness.dark,
         systemNavigationBarColor: isDarkTheme
-            ? AppColors.scaffoldDarkColor
+            ? AppColors.bottomAndUpSystemColor
             : AppColors.scaffoldLightColor,
         systemNavigationBarIconBrightness:
             isDarkTheme ? Brightness.light : Brightness.dark,
         systemNavigationBarDividerColor: isDarkTheme
-            ? AppColors.scaffoldDarkColor
+            ? AppColors.bottomAndUpSystemColor
             : AppColors.scaffoldLightColor,
       ),
     );
