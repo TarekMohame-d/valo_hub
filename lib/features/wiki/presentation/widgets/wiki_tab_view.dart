@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valo_hub/core/di/dependency_injection.dart';
 import 'package:valo_hub/features/agents/presentation/cubit/agents_cubit.dart';
-import 'package:valo_hub/features/agents/presentation/widgets/agents_bloc_builder.dart';
+import 'package:valo_hub/features/agents/presentation/screens/agents_tab_screen.dart';
 import 'package:valo_hub/features/weapons/presentation/cubit/weapons_cubit.dart';
 import 'package:valo_hub/features/weapons/presentation/screens/weapons_tab_screen.dart';
 
@@ -28,7 +28,7 @@ class _WikiTabViewState extends State<WikiTabView> {
       children: [
         BlocProvider(
           create: (context) => getIt<AgentsCubit>()..getAgents(),
-          child: const AgentsBlocBuilder(),
+          child: const AgentsTabScreen(),
         ),
         BlocProvider(
           create: (context) => getIt<WeaponsCubit>(),

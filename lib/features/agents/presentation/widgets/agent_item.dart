@@ -14,56 +14,62 @@ class AgentsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.bottomCenter,
+      clipBehavior: Clip.hardEdge,
       children: [
-        Container(
-          height: 150.h,
-          width: double.infinity,
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24),
-            gradient: LinearGradient(
-              colors: getBackGroundColor(
-                agent.backgroundGradientColors!,
-                opacity: 0.7,
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            height: 150.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24),
+              gradient: LinearGradient(
+                colors: getBackGroundColor(
+                  agent.backgroundGradientColors!,
+                  opacity: 0.7,
+                ),
+                begin: const FractionalOffset(0.0, 1.0),
+                end: const FractionalOffset(1.0, 0.0),
               ),
-              begin: const FractionalOffset(0.0, 1.0),
-              end: const FractionalOffset(1.0, 0.0),
             ),
           ),
         ),
         Positioned(
           bottom: 0,
-          left: -150,
-          child: Image(
-            image: CachedNetworkImageProvider(agent.fullPortrait!),
+          child: CachedNetworkImage(
+            imageUrl: agent.background!,
+            height: 150.h,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
+        ),
+        Positioned(
+          bottom: 0.h,
+          right: -95.w,
+          child: CachedNetworkImage(
+            imageUrl: agent.fullPortrait!,
             height: 300.h,
-            width: 500.w,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
         Align(
-          alignment: Alignment.bottomLeft,
-          child: Image(
-            image: CachedNetworkImageProvider(agent.background!),
-            height: 150.h,
-          ),
-        ),
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(24),
-              bottomRight: Radius.circular(24),
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(24),
+                bottomRight: Radius.circular(24),
+              ),
+              color: Colors.black.withOpacity(0.6),
             ),
-            color: Colors.black.withOpacity(0.6),
-          ),
-          child: Text(
-            agent.displayName!,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18.0.sp,
+            child: Text(
+              agent.displayName!,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0.sp,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
       ],
