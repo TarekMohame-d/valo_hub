@@ -1,11 +1,30 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:valo_hub/features/agents/data/data_sources/agents_remote_source.dart';
+import 'package:valo_hub/features/agents/data/repository/agents_repos_impl.dart';
+import 'package:valo_hub/features/agents/domain/repository/agents_repo.dart';
+import 'package:valo_hub/features/agents/domain/usecases/get_agents_use_case.dart';
+import 'package:valo_hub/features/agents/presentation/cubit/agents_cubit.dart';
+import 'package:valo_hub/features/weapons/presentation/cubit/weapons_cubit.dart';
+
 import '../networking/api_services.dart';
 import '../networking/dio_factory.dart';
 
 final getIt = GetIt.instance;
-Future<void> setupGetIt() async {
+void setupGetIt() {
   // Dio and ApiService
   Dio dio = DioFactory.getDio();
-  getIt.registerLazySingleton<ApiService>(() => ApiService(dio: dio));
+  getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+
+  getIt.registerLazySingleton<AgentsRemoteSource>(
+      () => AgentsRemoteSource(getIt()));
+
+  getIt.registerLazySingleton<AgentsRepo>(() => AgentsReposImpl(getIt()));
+
+  getIt
+      .registerLazySingleton<GetAgentsUseCase>(() => GetAgentsUseCase(getIt()));
+
+  getIt.registerFactory<AgentsCubit>(() => AgentsCubit(getIt()));
+
+  getIt.registerFactory<WeaponsCubit>(() => WeaponsCubit());
 }

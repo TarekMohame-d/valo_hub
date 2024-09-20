@@ -39,15 +39,22 @@ dependencies:
   # Audio playback library supporting various formats and platforms.
   just_audio: ^0.9.40
 
+  # Classes and helper functions that support JSON code generation via the `json_serializable
+  json_annotation: ^4.9.0
+
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  pretty_dio_logger: ^1.4.0
-
   flutter_lints: ^4.0.0
+
+  # A build system for Dart code generation and modular compilation
+  build_runner: ^2.4.12
+
+  # Automatically generate code for converting to and from JSON
+  json_serializable: ^6.8.0
 
 # The following section is specific to Flutter packages.
 flutter:

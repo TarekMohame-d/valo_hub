@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valo_hub/core/helpers/constants.dart';
 import 'package:valo_hub/core/routing/app_router.dart';
 import 'package:valo_hub/core/routing/routes.dart';
-import 'package:valo_hub/core/themes/app_themes.dart';
+import 'package:valo_hub/core/theme/app_themes.dart';
 
 class ValoHub extends StatelessWidget {
   final AppRouter appRouter;
@@ -21,7 +21,7 @@ class ValoHub extends StatelessWidget {
         theme: AppThemes.lightTheme,
         darkTheme: AppThemes.darkTheme,
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: onBoarding ? Routes.homeScreen : Routes.onBoardingScreen,
+        initialRoute: isFirstTime ? Routes.onBoardingScreen : Routes.homeScreen,
       ),
     );
   }

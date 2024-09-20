@@ -1,6 +1,6 @@
-late final bool onBoarding;
+bool isFirstTime = true;
 
 class SharedPrefKeys {
   SharedPrefKeys._();
-  static const String onBoarding = 'onBoarding';
+  static const String isFirstTime = 'isFirstTime';
 }
