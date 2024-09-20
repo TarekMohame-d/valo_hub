@@ -7,7 +7,18 @@ class GetAgentsUseCase {
 
   GetAgentsUseCase(this.agentsRepo);
 
-  Future<ApiResult<List<AgentsEntity>>> call() async{
+  Future<ApiResult<List<AgentsEntity>>> call() async {
     return await agentsRepo.getAgents();
+  }
+
+  List<AgentsEntity> filterAgents(List<AgentsEntity> agentsList, String query) {
+    if (query == 'All') {
+      return agentsList;
+    }
+    return agentsList
+        .where((agent) => agent.role!.displayName!
+            .toLowerCase()
+            .contains(query.toLowerCase()))
+        .toList();
   }
 }

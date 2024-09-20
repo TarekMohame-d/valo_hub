@@ -32,6 +32,7 @@ class AgentsRoles extends StatelessWidget {
         (index) => GestureDetector(
           onTap: () {
             context.read<AgentsCubit>().changeRole(index);
+            context.read<AgentsCubit>().filterAgents(roles[index]);
           },
           child: RolesItem(
             color: currentIndex == index

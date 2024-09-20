@@ -15,6 +15,12 @@ class GetAgentsSuccess extends AgentsState {
   GetAgentsSuccess(this.agentsList);
 }
 
+class AgentsFilter extends AgentsState {
+  final List<AgentsEntity> filteredAgentsList;
+
+  AgentsFilter(this.filteredAgentsList);
+}
+
 class GetAgentsFailure extends AgentsState {
   final ApiErrorModel errorModel;
 

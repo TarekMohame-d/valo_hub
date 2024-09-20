@@ -10,6 +10,7 @@ class AgentsCubit extends Cubit<AgentsState> {
   AgentsCubit(this._getAgentsUseCase) : super(AgentsInitial());
   final GetAgentsUseCase _getAgentsUseCase;
   List<AgentsEntity> agentsList = [];
+  List<AgentsEntity> filteredAgentsList = [];
   int currentRoleIndex = 0;
 
   void changeRole(int index) {
@@ -26,5 +27,10 @@ class AgentsCubit extends Cubit<AgentsState> {
     } else {
       emit(GetAgentsFailure(result.error!));
     }
+  }
+
+  void filterAgents(String query) {
+    filteredAgentsList = _getAgentsUseCase.filterAgents(agentsList, query);
+    emit(AgentsFilter(filteredAgentsList));
   }
 }
