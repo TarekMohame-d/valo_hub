@@ -23,22 +23,29 @@ class AgentsItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24),
             gradient: LinearGradient(
-              colors: getBackGroundColor(agent.backgroundGradientColors!),
+              colors: getBackGroundColor(
+                agent.backgroundGradientColors!,
+                opacity: 0.7,
+              ),
               begin: const FractionalOffset(0.0, 1.0),
               end: const FractionalOffset(1.0, 0.0),
-            ),
-            image: DecorationImage(
-              image: CachedNetworkImageProvider(agent.background!),
-              alignment: Alignment.bottomLeft,
             ),
           ),
         ),
         Positioned(
           bottom: 0,
+          left: -150,
           child: Image(
             image: CachedNetworkImageProvider(agent.fullPortrait!),
             height: 300.h,
-            alignment: Alignment.bottomRight,
+            width: 500.w,
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: Image(
+            image: CachedNetworkImageProvider(agent.background!),
+            height: 150.h,
           ),
         ),
         Container(
@@ -48,7 +55,7 @@ class AgentsItem extends StatelessWidget {
               bottomLeft: Radius.circular(24),
               bottomRight: Radius.circular(24),
             ),
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withOpacity(0.6),
           ),
           child: Text(
             agent.displayName!,
@@ -63,9 +70,11 @@ class AgentsItem extends StatelessWidget {
     );
   }
 
-  List<Color> getBackGroundColor(List<String> colorsList) {
+  List<Color> getBackGroundColor(List<String> colorsList,
+      {double opacity = 1.0}) {
     return colorsList.map((hexColor) {
-      return Color(int.parse('0x$hexColor'));
+      int colorWithoutAlpha = int.parse('0xFF${hexColor.substring(0, 6)}');
+      return Color(colorWithoutAlpha).withOpacity(opacity);
     }).toList();
   }
 }

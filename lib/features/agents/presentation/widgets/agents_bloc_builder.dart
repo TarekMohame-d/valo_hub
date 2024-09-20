@@ -52,7 +52,7 @@ class AgentWidget extends StatelessWidget {
     return Column(
       children: [
         const AgentsRolesBlocBuilder(),
-        verticalSpace(20),
+        verticalSpace(8),
         Expanded(
           child: CustomScrollView(
             slivers: <Widget>[
