@@ -1,6 +1,7 @@
-late final bool onBoarding;
+bool goToHomeScreen = false;
 
 class SharedPrefKeys {
   SharedPrefKeys._();
-  static const String onBoarding = 'onBoarding';
+  static const String goToHomeScreen = 'goToHomeScreen';
+  static const String agentDBExpiration = 'agentDBExpiration';
 }
