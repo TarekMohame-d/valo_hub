@@ -64,7 +64,7 @@ class _OnboardingContentState extends State<OnboardingContent> {
   void _handleNext() async {
     if (currentIndex == widget.onboardingList.length - 1) {
       // Save data to shared preferences asynchronously
-      await SharedPrefHelper.setData(SharedPrefKeys.isFirstTime, false);
+      await SharedPrefHelper.setData(SharedPrefKeys.goToHomeScreen, true);
 
       // Ensure the widget is still mounted before using the context
       if (!mounted) return;

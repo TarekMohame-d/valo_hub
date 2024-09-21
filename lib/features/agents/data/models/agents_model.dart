@@ -1,3 +1,4 @@
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
 
@@ -73,12 +74,18 @@ class AgentData {
       _$AgentDataFromJson(json);
 }
 
+@HiveType(typeId: 1)
 @JsonSerializable()
 class Role {
+  @HiveField(0)
   String? uuid;
+  @HiveField(1)
   String? displayName;
+  @HiveField(2)
   String? description;
+  @HiveField(3)
   String? displayIcon;
+  @HiveField(4)
   String? assetPath;
 
   Role({
@@ -116,11 +123,16 @@ class RecruitmentData {
       _$RecruitmentDataFromJson(json);
 }
 
+@HiveType(typeId: 2)
 @JsonSerializable()
 class Abilities {
+  @HiveField(0)
   String? slot;
+  @HiveField(1)
   String? displayName;
+  @HiveField(2)
   String? description;
+  @HiveField(3)
   String? displayIcon;
 
   Abilities({

@@ -27,11 +27,11 @@ class _WikiTabViewState extends State<WikiTabView> {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         BlocProvider(
-          create: (context) => getIt<AgentsCubit>()..getAgents(),
+          create: (context) => AgentsCubit(getIt())..getAgents(),
           child: const AgentsTabScreen(),
         ),
         BlocProvider(
-          create: (context) => getIt<WeaponsCubit>(),
+          create: (context) => WeaponsCubit(),
           child: const WeaponsTabScreen(),
         ),
         const Center(child: Text('Maps')),

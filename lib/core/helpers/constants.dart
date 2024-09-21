@@ -1,6 +1,7 @@
-bool isFirstTime = true;
+bool goToHomeScreen = false;
 
 class SharedPrefKeys {
   SharedPrefKeys._();
-  static const String isFirstTime = 'isFirstTime';
+  static const String goToHomeScreen = 'goToHomeScreen';
+  static const String agentDBExpiration = 'agentDBExpiration';
 }
