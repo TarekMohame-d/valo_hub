@@ -6,20 +6,8 @@ import 'package:valo_hub/features/agents/presentation/screens/agents_tab_screen.
 import 'package:valo_hub/features/weapons/presentation/cubit/weapons_cubit.dart';
 import 'package:valo_hub/features/weapons/presentation/screens/weapons_tab_screen.dart';
 
-class WikiTabView extends StatefulWidget {
+class WikiTabView extends StatelessWidget {
   const WikiTabView({super.key});
-
-  @override
-  State<WikiTabView> createState() => _WikiTabViewState();
-}
-
-class _WikiTabViewState extends State<WikiTabView> {
-  @override
-  void dispose() {
-    getIt<AgentsCubit>().close();
-    getIt<WeaponsCubit>().close();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {

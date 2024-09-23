@@ -7,8 +7,8 @@ class AgentsRemoteSource {
   AgentsRemoteSource(this._apiService);
   Future<AgentsModel> fetchAgents() async {
     final response = await _apiService.get(
-      baseUrl: ApiConstants.baseUrl,
-      endPoint: ApiConstants.agentEndPoint,
+      baseUrl: ApiConstants.valorantAPIbaseUrl,
+      endPoint: ApiConstants.agentsEndPoint,
       queryParameters: {
         'isPlayableCharacter': true,
       },
