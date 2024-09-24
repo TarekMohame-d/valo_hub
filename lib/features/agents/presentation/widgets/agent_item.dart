@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:valo_hub/core/functions/extract_color.dart';
 import 'package:valo_hub/core/helpers/extensions.dart';
 import 'package:valo_hub/core/routing/routes.dart';
+import 'package:valo_hub/core/theme/app_text_styles.dart';
 import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
 
 class AgentsItem extends StatelessWidget {
@@ -75,10 +77,7 @@ class AgentsItem extends StatelessWidget {
               ),
               child: Text(
                 agent.displayName!,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0.sp,
-                ),
+                style: AppTextStyles.font16WhiteBold,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -86,13 +85,5 @@ class AgentsItem extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  List<Color> getBackGroundColor(List<String> colorsList,
-      {double opacity = 1.0}) {
-    return colorsList.map((hexColor) {
-      int colorWithoutAlpha = int.parse('0xFF${hexColor.substring(0, 6)}');
-      return Color(colorWithoutAlpha).withOpacity(opacity);
-    }).toList();
   }
 }

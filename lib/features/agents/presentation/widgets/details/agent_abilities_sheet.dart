@@ -3,9 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valo_hub/core/theme/app_colors.dart';
+import 'package:valo_hub/core/theme/app_text_styles.dart';
 import 'package:valo_hub/core/widgets/spacing.dart';
 import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
-import 'package:valo_hub/features/agents/presentation/widgets/agent_abilities_widget.dart';
+import 'package:valo_hub/features/agents/presentation/widgets/details/agent_abilities_widget.dart';
 
 class AgentAbilitiesSheet extends StatelessWidget {
   const AgentAbilitiesSheet({
@@ -41,7 +42,7 @@ class AgentAbilitiesSheet extends StatelessWidget {
                     width: 5,
                   ),
                 ),
-                color: Colors.transparent.withOpacity(0.2),
+                color: Colors.black.withOpacity(0.6),
               ),
               child: CustomScrollView(
                 controller: scrollController,
@@ -63,14 +64,12 @@ class AgentAbilitiesSheet extends StatelessWidget {
                           verticalSpace(20),
                           Text(
                             agent.displayName!,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.sp,
-                            ),
+                            style: AppTextStyles.font20WhiteBold,
                           ),
                           verticalSpace(20),
                           Text(
                             agent.description!,
+                            style: AppTextStyles.font14WhiteRegular,
                           ),
                           verticalSpace(20),
                           AgentAbilitiesWidget(

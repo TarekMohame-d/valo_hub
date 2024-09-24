@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valo_hub/features/agents/presentation/cubit/agents_cubit.dart';
-import 'package:valo_hub/features/agents/presentation/widgets/agents_roles.dart';
+import 'package:valo_hub/features/agents/presentation/widgets/roles/agents_roles.dart';
 
 class AgentsRolesBlocBuilder extends StatelessWidget {
   const AgentsRolesBlocBuilder({super.key});

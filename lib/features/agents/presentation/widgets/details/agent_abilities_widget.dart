@@ -2,9 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valo_hub/core/theme/app_colors.dart';
+import 'package:valo_hub/core/theme/app_text_styles.dart';
 import 'package:valo_hub/core/widgets/spacing.dart';
 import 'package:valo_hub/features/agents/data/models/agents_model.dart';
-import 'package:valo_hub/features/agents/presentation/widgets/ability_item.dart';
+import 'package:valo_hub/features/agents/presentation/widgets/details/ability_item.dart';
 
 class AgentAbilitiesWidget extends StatefulWidget {
   const AgentAbilitiesWidget(
@@ -56,14 +57,12 @@ class _AgentAbilitiesWidgetState extends State<AgentAbilitiesWidget> {
               verticalSpace(20),
               Text(
                 widget.abilities[currentIndex].displayName!,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.sp,
-                ),
+                style: AppTextStyles.font20WhiteBold,
               ),
               verticalSpace(20),
               Text(
                 widget.abilities[currentIndex].description!,
+                style: AppTextStyles.font14WhiteRegular,
               ),
             ],
           ),
@@ -90,16 +89,14 @@ class _AgentAbilitiesWidgetState extends State<AgentAbilitiesWidget> {
                   horizontalSpace(8),
                   Text(
                     widget.role.displayName!,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.sp,
-                    ),
+                    style: AppTextStyles.font20WhiteBold,
                   ),
                 ],
               ),
               verticalSpace(20),
               Text(
                 widget.role.description!,
+                style: AppTextStyles.font14WhiteRegular,
               ),
             ],
           ),

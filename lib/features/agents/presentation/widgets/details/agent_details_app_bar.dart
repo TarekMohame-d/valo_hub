@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valo_hub/core/helpers/extensions.dart';
+import 'package:valo_hub/core/theme/app_text_styles.dart';
 
 class AgentDetailsAppBar extends StatelessWidget {
   const AgentDetailsAppBar({
@@ -24,15 +25,13 @@ class AgentDetailsAppBar extends StatelessWidget {
             onTap: () {
               print('Voice Lines');
             },
-            child: const Row(
+            child: Row(
               children: [
                 Text(
                   'Voice Lines',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: AppTextStyles.font14WhiteRegular,
                 ),
-                Icon(
+                const Icon(
                   Icons.music_note,
                 ),
               ],
