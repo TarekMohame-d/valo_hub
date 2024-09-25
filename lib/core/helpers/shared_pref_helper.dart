@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefHelper {
@@ -64,8 +65,8 @@ class SharedPrefHelper {
 
   /// Gets an String value from SharedPreferences with given [key].
   static Future<String> getString(String key) async {
-    log('SharedPrefHelper : getString with key : $key');
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    log('SharedPrefHelper : getString with key : $key and value : ${sharedPreferences.getString(key)}');
     return sharedPreferences.getString(key) ?? '';
   }
 }

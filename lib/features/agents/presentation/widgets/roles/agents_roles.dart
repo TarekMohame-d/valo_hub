@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valo_hub/core/theme/app_colors.dart';
 import 'package:valo_hub/features/agents/presentation/cubit/agents_cubit.dart';
-import 'package:valo_hub/features/agents/presentation/widgets/agents_roles_item.dart';
+import 'package:valo_hub/features/agents/presentation/widgets/roles/agents_roles_item.dart';
 
 class AgentsRoles extends StatelessWidget {
   const AgentsRoles({super.key, required this.currentIndex});
