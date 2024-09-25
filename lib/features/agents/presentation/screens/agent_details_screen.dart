@@ -51,9 +51,11 @@ class AgentDetailsScreen extends StatelessWidget {
                 agent: agent,
               ),
             ),
-            const Align(
+            Align(
               alignment: Alignment.topCenter,
-              child: AgentDetailsAppBar(),
+              child: AgentDetailsAppBar(
+                agentName: agent.displayName!,
+              ),
             ),
           ],
         ),
