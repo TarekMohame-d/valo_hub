@@ -19,7 +19,7 @@ class WikiTabView extends StatelessWidget {
           child: const AgentsTabScreen(),
         ),
         BlocProvider(
-          create: (context) => WeaponsCubit(),
+          create: (context) => WeaponsCubit(getIt())..getWeapons(),
           child: const WeaponsTabScreen(),
         ),
         const Center(child: Text('Maps')),
