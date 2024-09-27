@@ -10,4 +10,15 @@ class GetWeaponsUseCase {
   Future<ApiResult<List<WeaponEntity>>> call() async {
     return await _weaponsRepo.getWeapons();
   }
+
+  List<WeaponEntity> filterAgents(
+      List<WeaponEntity> weaponsList, String query) {
+    if (query == 'All') {
+      return weaponsList;
+    }
+    return weaponsList
+        .where((weapon) =>
+            weapon.category!.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+  }
 }

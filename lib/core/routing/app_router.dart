@@ -3,6 +3,8 @@ import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
 import 'package:valo_hub/features/agents/presentation/screens/agent_details_screen.dart';
 import 'package:valo_hub/features/agents/presentation/screens/agents_voice_lines_screen.dart';
 import 'package:valo_hub/features/home/presentation/screens/home_screen.dart';
+import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
+import 'package:valo_hub/features/weapons/presentation/screens/weapon_details_screen.dart';
 
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'routes.dart';
@@ -29,8 +31,14 @@ class AppRouter {
         );
       case Routes.agentVoiceLinesScreen:
         return MaterialPageRoute(
-          builder: (context) =>  AgentsVoiceLinesScreen(
+          builder: (context) => AgentsVoiceLinesScreen(
             agentName: arguments as String,
+          ),
+        );
+      case Routes.weaponDetailsScreen:
+        return MaterialPageRoute(
+          builder: (context) => WeaponDetailsScreen(
+            weapon: arguments as WeaponEntity,
           ),
         );
       default:

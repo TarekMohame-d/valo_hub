@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valo_hub/core/helpers/extensions.dart';
 import 'package:valo_hub/core/networking/api_error_model.dart';
 import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
 import 'package:valo_hub/features/weapons/domain/usecases/get_weapons_use_case.dart';
@@ -11,6 +12,7 @@ class WeaponsCubit extends Cubit<WeaponsState> {
 
   final GetWeaponsUseCase _getWeaponsUseCase;
   List<WeaponEntity> weapons = [];
+  List<WeaponEntity> filteredAgentsList = [];
 
   Future<void> getWeapons() async {
     emit(WeaponsLoading());
@@ -21,5 +23,13 @@ class WeaponsCubit extends Cubit<WeaponsState> {
     } else {
       emit(WeaponsFailure(result.error!));
     }
+  }
+
+  void filterAgents(String query) {
+    if (weapons.isNullOrEmpty()) {
+      return;
+    }
+    filteredAgentsList = _getWeaponsUseCase.filterAgents(weapons, query);
+    emit(WeaponsLoaded(filteredAgentsList));
   }
 }
