@@ -44,7 +44,6 @@ class WikiLayout extends StatelessWidget {
         child: Material(
           color: AppColors.bottomAndUpSystemColor,
           child: TabBar(
-            onTap: (index) => print(index),
             padding: EdgeInsets.symmetric(horizontal: 5.0.w),
             physics: const BouncingScrollPhysics(),
             isScrollable: true,
