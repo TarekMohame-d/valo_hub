@@ -2,6 +2,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:valo_hub/features/agents/data/models/agents_model.dart';
 import 'package:valo_hub/features/agents/domain/entities/agent_voice_entity.dart';
 import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
+import 'package:valo_hub/features/weapons/data/models/weapon_model.dart';
+import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
 
 class HiveHelper {
   /// Initialize Hive with adapters
@@ -11,6 +13,17 @@ class HiveHelper {
     Hive.registerAdapter(RoleAdapter());
     Hive.registerAdapter(AbilitiesAdapter());
     Hive.registerAdapter(AgentVoiceEntityAdapter());
+    Hive.registerAdapter(WeaponStatsAdapter());
+    Hive.registerAdapter(AdsStatsAdapter());
+    Hive.registerAdapter(AltShotgunStatsAdapter());
+    Hive.registerAdapter(AirBurstStatsAdapter());
+    Hive.registerAdapter(DamageRangesAdapter());
+    Hive.registerAdapter(ShopDataAdapter());
+    Hive.registerAdapter(GridPositionAdapter());
+    Hive.registerAdapter(SkinsAdapter());
+    Hive.registerAdapter(ChromasAdapter());
+    Hive.registerAdapter(LevelsAdapter());
+    Hive.registerAdapter(WeaponEntityAdapter());
   }
 
   /// Save data to the box
@@ -128,6 +141,7 @@ class HiveHelper {
 class HiveBoxes {
   static const String agentsBox = 'agentsBox';
   static const String agentsVoiceLinesBox = 'agentsVoiceLinesBox';
+  static const String weaponsBox = 'weaponsBox';
 }
 
 class HiveKeys {}
