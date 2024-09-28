@@ -4,6 +4,7 @@ import 'package:valo_hub/core/theme/app_colors.dart';
 import 'package:valo_hub/core/theme/app_text_styles.dart';
 import 'package:valo_hub/core/widgets/spacing.dart';
 import 'package:valo_hub/features/weapons/data/models/weapon_model.dart';
+import 'package:valo_hub/features/weapons/presentation/widgets/weapon_details/weapon_skins/custom_video_player.dart';
 
 class VariantLevelsVideo extends StatefulWidget {
   const VariantLevelsVideo({super.key, required this.levels});
@@ -16,6 +17,7 @@ class VariantLevelsVideo extends StatefulWidget {
 
 class _VariantLevelsVideoState extends State<VariantLevelsVideo> {
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return widget.levels!.length < 2
@@ -63,14 +65,11 @@ class _VariantLevelsVideoState extends State<VariantLevelsVideo> {
                   ),
                 ],
               ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 12.h),
-                height: 200.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: currentIndex % 2 == 0 ? Colors.red : Colors.amber,
-                ),
+              verticalSpace(12),
+              CustomVideoPlayer(
+                key: ValueKey(widget.levels?[currentIndex]
+                    .streamedVideo),
+                videoUrl: widget.levels?[currentIndex].streamedVideo ?? 'n/a',
               ),
             ],
           );

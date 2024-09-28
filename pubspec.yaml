@@ -42,6 +42,12 @@ dependencies:
   # Audio playback library supporting various formats and platforms.
   just_audio: ^0.9.40
 
+  # Flutter plugin for displaying inline video with other Flutter widgets on Android, iOS, and web.
+  video_player: ^2.9.1
+
+  # A video player for Flutter with Cupertino and Material play controls
+  chewie: ^1.8.5
+
   # Classes and helper functions that support JSON code generation via the `json_serializable
   json_annotation: ^4.9.0
 
