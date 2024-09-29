@@ -2,6 +2,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:valo_hub/features/agents/data/models/agents_model.dart';
 import 'package:valo_hub/features/agents/domain/entities/agent_voice_entity.dart';
 import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
+import 'package:valo_hub/features/maps/data/models/maps_model.dart';
+import 'package:valo_hub/features/maps/domain/entities/map_entity.dart';
 import 'package:valo_hub/features/weapons/data/models/weapon_model.dart';
 import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
 
@@ -24,6 +26,9 @@ class HiveHelper {
     Hive.registerAdapter(ChromasAdapter());
     Hive.registerAdapter(LevelsAdapter());
     Hive.registerAdapter(WeaponEntityAdapter());
+    Hive.registerAdapter(CallOutsAdapter());
+    Hive.registerAdapter(LocationAdapter());
+    Hive.registerAdapter(MapEntityAdapter());
   }
 
   /// Save data to the box
@@ -136,12 +141,19 @@ class HiveHelper {
   static Future<void> closeAllBoxes() async {
     await Hive.close();
   }
+
+  static Future<void> deleteBoxFromDisk(
+    String boxName,
+  ) async {
+    await Hive.deleteBoxFromDisk(boxName);
+  }
 }
 
 class HiveBoxes {
   static const String agentsBox = 'agentsBox';
   static const String agentsVoiceLinesBox = 'agentsVoiceLinesBox';
   static const String weaponsBox = 'weaponsBox';
+  static const String mapsBox = 'mapsBox';
 }
 
 class HiveKeys {}

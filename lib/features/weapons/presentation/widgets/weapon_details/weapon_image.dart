@@ -23,11 +23,17 @@ class WeaponImage extends StatelessWidget {
             child: CachedNetworkImage(
               color: Colors.black.withOpacity(0.2),
               imageUrl: imageUrl,
+              memCacheWidth: (MediaQuery.of(context).size.width *
+                      MediaQuery.of(context).devicePixelRatio)
+                  .round(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
           CachedNetworkImage(
             imageUrl: imageUrl,
+            memCacheWidth: (MediaQuery.of(context).size.width *
+                    MediaQuery.of(context).devicePixelRatio)
+                .round(),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ],

@@ -36,6 +36,10 @@ class AgentDetailsScreen extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: agent.background!,
                 height: MediaQuery.of(context).size.height * 0.7,
+                memCacheHeight: (MediaQuery.of(context).size.height *
+                        0.7 *
+                        MediaQuery.of(context).devicePixelRatio)
+                    .round(),
               ),
             ),
             Positioned(
@@ -43,6 +47,9 @@ class AgentDetailsScreen extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: agent.fullPortrait!,
                 height: MediaQuery.of(context).size.height,
+                memCacheHeight: (MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio)
+                    .round(),
               ),
             ),
             Align(

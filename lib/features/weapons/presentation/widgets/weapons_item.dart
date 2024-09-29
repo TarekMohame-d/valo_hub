@@ -34,6 +34,10 @@ class WeaponsItem extends StatelessWidget {
               child: CachedNetworkImage(
                 width: 200.w,
                 height: 100.h,
+                memCacheWidth:
+                    (200.w * MediaQuery.of(context).devicePixelRatio).round(),
+                memCacheHeight:
+                    (100.h * MediaQuery.of(context).devicePixelRatio).round(),
                 imageUrl: weapon.displayIcon!,
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),

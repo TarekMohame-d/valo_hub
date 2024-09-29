@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valo_hub/core/di/dependency_injection.dart';
 import 'package:valo_hub/features/agents/presentation/cubit/agents_cubit.dart';
 import 'package:valo_hub/features/agents/presentation/screens/agents_tab_screen.dart';
+import 'package:valo_hub/features/maps/presentation/cubit/maps_cubit.dart';
+import 'package:valo_hub/features/maps/presentation/screens/maps_tab_screen.dart';
 import 'package:valo_hub/features/weapons/presentation/cubit/weapons_cubit.dart';
 import 'package:valo_hub/features/weapons/presentation/screens/weapons_tab_screen.dart';
 
@@ -22,10 +24,12 @@ class WikiTabView extends StatelessWidget {
           create: (context) => WeaponsCubit(getIt())..getWeapons(),
           child: const WeaponsTabScreen(),
         ),
-        const Center(child: Text('Maps')),
+        BlocProvider(
+          create: (context) => MapsCubit(getIt())..getMaps(),
+          child: const MapsTabScreen(),
+        ),
         const Center(child: Text('Cards')),
         const Center(child: Text('GameModes')),
-        const Center(child: Text('Bundles')),
         const Center(child: Text('Sprays')),
       ],
     );

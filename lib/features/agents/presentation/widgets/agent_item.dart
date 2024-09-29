@@ -52,6 +52,8 @@ class AgentsItem extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: agent.background!,
               height: 150.h,
+              memCacheHeight:
+                  (150.h * MediaQuery.of(context).devicePixelRatio).round(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
@@ -59,8 +61,10 @@ class AgentsItem extends StatelessWidget {
             bottom: 0.h,
             right: -95.w,
             child: CachedNetworkImage(
-              imageUrl: agent.fullPortrait!,
               height: 300.h,
+              imageUrl: agent.fullPortrait!,
+              memCacheHeight:
+                  (300.h * MediaQuery.of(context).devicePixelRatio).round(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),

@@ -44,7 +44,6 @@ class WikiLayout extends StatelessWidget {
         child: Material(
           color: AppColors.bottomAndUpSystemColor,
           child: TabBar(
-            onTap: (index) => print(index),
             padding: EdgeInsets.symmetric(horizontal: 5.0.w),
             physics: const BouncingScrollPhysics(),
             isScrollable: true,
@@ -68,7 +67,6 @@ enum WikiTab {
   maps(CustomIcons.map, 'Maps'),
   cards(Icons.style_rounded, 'Cards'),
   gameModes(Icons.type_specimen_rounded, 'GameModes'),
-  bundles(Icons.monetization_on_rounded, 'Bundles'),
   sprays(CustomIcons.spray, 'Sprays');
 
   final IconData icon;
