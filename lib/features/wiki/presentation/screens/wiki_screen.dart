@@ -67,7 +67,6 @@ enum WikiTab {
   maps(CustomIcons.map, 'Maps'),
   cards(Icons.style_rounded, 'Cards'),
   gameModes(Icons.type_specimen_rounded, 'GameModes'),
-  bundles(Icons.monetization_on_rounded, 'Bundles'),
   sprays(CustomIcons.spray, 'Sprays');
 
   final IconData icon;

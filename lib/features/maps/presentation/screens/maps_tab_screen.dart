@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valo_hub/features/maps/presentation/cubit/maps_cubit.dart';
+import 'package:valo_hub/features/maps/presentation/widgets/maps_list_view.dart';
 
 class MapsTabScreen extends StatelessWidget {
   const MapsTabScreen({super.key});
@@ -19,9 +20,7 @@ class MapsTabScreen extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           case MapsLoaded _:
-            return Center(
-              child: Text(state.maps.length.toString()),
-            );
+            return MapsListView(maps: state.maps);
           case MapsFailure _:
             return Center(
               child: Text(state.errorModel.statusMessage!),

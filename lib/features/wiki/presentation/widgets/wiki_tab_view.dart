@@ -30,7 +30,6 @@ class WikiTabView extends StatelessWidget {
         ),
         const Center(child: Text('Cards')),
         const Center(child: Text('GameModes')),
-        const Center(child: Text('Bundles')),
         const Center(child: Text('Sprays')),
       ],
     );
