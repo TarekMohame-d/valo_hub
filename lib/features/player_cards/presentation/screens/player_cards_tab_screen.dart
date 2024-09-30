@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valo_hub/features/player_cards/presentation/cubit/player_cards_cubit.dart';
-import 'package:valo_hub/features/player_cards/presentation/widgets/player_cards_list_view.dart';
+import 'package:valo_hub/features/player_cards/presentation/widgets/player_cards_grid_view.dart';
 
 class PlayerCardsTabScreen extends StatelessWidget {
   const PlayerCardsTabScreen({super.key});
@@ -20,7 +20,7 @@ class PlayerCardsTabScreen extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           case PlayerCardsLoaded _:
-            return PlayerCardsListView(cards: state.playerCards);
+            return PlayerCardsGridView(cards: state.playerCards);
           case PlayerCardsFailure _:
             return Center(
               child: Text(state.errorModel.statusMessage!),

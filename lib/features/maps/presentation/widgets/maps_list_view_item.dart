@@ -22,11 +22,8 @@ class MapsListViewItem extends StatelessWidget {
               imageUrl: map.splash ?? 'n/a',
               errorWidget: (context, url, error) => const Icon(Icons.error),
               fit: BoxFit.cover,
-              memCacheWidth: (MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio)
-                  .round(),
-              memCacheHeight:
-                  (200.h * MediaQuery.of(context).devicePixelRatio).round(),
+              memCacheHeight: 200.h.round(),
+              memCacheWidth: MediaQuery.of(context).size.width.round(),
             ),
           ),
           Container(

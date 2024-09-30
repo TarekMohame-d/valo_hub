@@ -6,13 +6,15 @@ import 'package:valo_hub/features/maps/data/models/maps_model.dart';
 import 'package:valo_hub/features/maps/domain/entities/map_entity.dart';
 import 'package:valo_hub/features/player_cards/data/models/player_cards_model.dart';
 import 'package:valo_hub/features/player_cards/domain/entities/player_cards_entity.dart';
+import 'package:valo_hub/features/sprays/data/models/spray_model.dart';
+import 'package:valo_hub/features/sprays/domain/entities/spray_entity.dart';
 import 'package:valo_hub/features/weapons/data/models/weapon_model.dart';
 import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
 
 class HiveHelper {
   /// Initialize Hive with adapters
   static Future<void> initHive() async {
-    // 20 adapters
+    // 22 adapters
     await Hive.initFlutter();
     Hive.registerAdapter(AgentsEntityAdapter());
     Hive.registerAdapter(RoleAdapter());
@@ -33,8 +35,10 @@ class HiveHelper {
     Hive.registerAdapter(LocationAdapter());
     Hive.registerAdapter(MapEntityAdapter());
     Hive.registerAdapter(PlayerCardsEntityAdapter());
-     Hive.registerAdapter(PlayerCardsModelAdapter());
-     Hive.registerAdapter(CardDataAdapter());
+    Hive.registerAdapter(PlayerCardsModelAdapter());
+    Hive.registerAdapter(CardDataAdapter());
+    Hive.registerAdapter(SprayEntityAdapter());
+    Hive.registerAdapter(SprayDataAdapter());
   }
 
   /// Save data to the box
@@ -161,6 +165,7 @@ class HiveBoxes {
   static const String weaponsBox = 'weaponsBox';
   static const String mapsBox = 'mapsBox';
   static const String playerCardsBox = 'playerCardsBox';
+  static const String spraysBox = 'spraysBox';
 }
 
 class HiveKeys {}
