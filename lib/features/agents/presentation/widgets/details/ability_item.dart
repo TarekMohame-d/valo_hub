@@ -11,7 +11,9 @@ class AbilityItem extends StatelessWidget {
     return CachedNetworkImage(
       imageUrl: img,
       height: 40.h,
-      width: 40.h,
+      width: 40.w,
+      memCacheWidth: (40.w * MediaQuery.of(context).devicePixelRatio).round(),
+      memCacheHeight: (40.h * MediaQuery.of(context).devicePixelRatio).round(),
       color: color,
       errorWidget: (context, url, error) => Icon(
         Icons.error,

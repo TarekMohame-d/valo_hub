@@ -8,41 +8,41 @@ part 'map_entity.g.dart';
 @HiveType(typeId: 15)
 class MapEntity {
   @HiveField(0)
-  String? uuid;
+  final String? uuid;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? narrativeDescription;
+  final String? narrativeDescription;
   @HiveField(3)
-  String? tacticalDescription;
+  final String? tacticalDescription;
   @HiveField(4)
-  String? coordinates;
+  final String? coordinates;
   @HiveField(5)
-  String? displayIcon;
+  final String? displayIcon;
   @HiveField(6)
-  String? listViewIcon;
+  final String? listViewIcon;
   @HiveField(7)
-  String? listViewIconTall;
+  final String? listViewIconTall;
   @HiveField(8)
-  String? splash;
+  final String? splash;
   @HiveField(9)
-  String? stylizedBackgroundImage;
+  final String? stylizedBackgroundImage;
   @HiveField(10)
-  String? premierBackgroundImage;
+  final String? premierBackgroundImage;
   @HiveField(11)
-  String? assetPath;
+  final String? assetPath;
   @HiveField(12)
-  String? mapUrl;
+  final String? mapUrl;
   @HiveField(13)
-  double? xMultiplier;
+  final double? xMultiplier;
   @HiveField(14)
-  double? yMultiplier;
+  final double? yMultiplier;
   @HiveField(15)
-  double? xScalarToAdd;
+  final double? xScalarToAdd;
   @HiveField(16)
-  double? yScalarToAdd;
+  final double? yScalarToAdd;
   @HiveField(17)
-  List<CallOuts>? callOuts;
+  final List<CallOuts>? callOuts;
 
   MapEntity({
     this.uuid,

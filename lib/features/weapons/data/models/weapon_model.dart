@@ -6,9 +6,9 @@ part 'weapon_model.g.dart';
 
 @JsonSerializable()
 class WeaponModel {
-  int? status;
+  final int? status;
   @JsonKey(name: 'data')
-  List<WeaponData>? weaponsData;
+  final List<WeaponData>? weaponsData;
 
   WeaponModel({
     this.status,
@@ -21,16 +21,16 @@ class WeaponModel {
 
 @JsonSerializable()
 class WeaponData {
-  String? uuid;
-  String? displayName;
-  String? category;
-  String? defaultSkinUuid;
-  String? displayIcon;
-  String? killStreamIcon;
-  String? assetPath;
-  WeaponStats? weaponStats;
-  ShopData? shopData;
-  List<Skins>? skins;
+  final String? uuid;
+  final String? displayName;
+  final String? category;
+  final String? defaultSkinUuid;
+  final String? displayIcon;
+  final String? killStreamIcon;
+  final String? assetPath;
+  final WeaponStats? weaponStats;
+  final ShopData? shopData;
+  final List<Skins>? skins;
 
   WeaponData({
     this.uuid,
@@ -53,35 +53,35 @@ class WeaponData {
 @JsonSerializable()
 class WeaponStats {
   @HiveField(0)
-  double? fireRate;
+  final double? fireRate;
   @HiveField(1)
-  int? magazineSize;
+  final int? magazineSize;
   @HiveField(2)
-  double? runSpeedMultiplier;
+  final double? runSpeedMultiplier;
   @HiveField(3)
-  double? equipTimeSeconds;
+  final double? equipTimeSeconds;
   @HiveField(4)
-  double? reloadTimeSeconds;
+  final double? reloadTimeSeconds;
   @HiveField(5)
-  double? firstBulletAccuracy;
+  final double? firstBulletAccuracy;
   @HiveField(6)
-  int? shotgunPelletCount;
+  final int? shotgunPelletCount;
   @HiveField(7)
-  String? wallPenetration;
+  final String? wallPenetration;
   @HiveField(8)
-  String? feature;
+  final String? feature;
   @HiveField(9)
-  String? fireMode;
+  final String? fireMode;
   @HiveField(10)
-  String? altFireType;
+  final String? altFireType;
   @HiveField(11)
-  AdsStats? adsStats;
+  final AdsStats? adsStats;
   @HiveField(12)
-  AltShotgunStats? altShotgunStats;
+  final AltShotgunStats? altShotgunStats;
   @HiveField(13)
-  AirBurstStats? airBurstStats;
+  final AirBurstStats? airBurstStats;
   @HiveField(14)
-  List<DamageRanges>? damageRanges;
+  final List<DamageRanges>? damageRanges;
 
   WeaponStats({
     this.fireRate,
@@ -109,15 +109,15 @@ class WeaponStats {
 @JsonSerializable()
 class AdsStats {
   @HiveField(0)
-  double? zoomMultiplier;
+  final double? zoomMultiplier;
   @HiveField(1)
-  double? fireRate;
+  final double? fireRate;
   @HiveField(2)
-  double? runSpeedMultiplier;
+  final double? runSpeedMultiplier;
   @HiveField(3)
-  int? burstCount;
+  final int? burstCount;
   @HiveField(4)
-  double? firstBulletAccuracy;
+  final double? firstBulletAccuracy;
 
   AdsStats({
     this.zoomMultiplier,
@@ -135,9 +135,9 @@ class AdsStats {
 @JsonSerializable()
 class AltShotgunStats {
   @HiveField(0)
-  int? shotgunPelletCount;
+  final int? shotgunPelletCount;
   @HiveField(1)
-  double? burstRate;
+  final double? burstRate;
 
   AltShotgunStats({
     this.shotgunPelletCount,
@@ -152,9 +152,9 @@ class AltShotgunStats {
 @JsonSerializable()
 class AirBurstStats {
   @HiveField(0)
-  int? shotgunPelletCount;
+  final int? shotgunPelletCount;
   @HiveField(1)
-  double? burstDistance;
+  final double? burstDistance;
 
   AirBurstStats({
     this.shotgunPelletCount,
@@ -169,15 +169,15 @@ class AirBurstStats {
 @JsonSerializable()
 class DamageRanges {
   @HiveField(0)
-  int? rangeStartMeters;
+  final int? rangeStartMeters;
   @HiveField(1)
-  int? rangeEndMeters;
+  final int? rangeEndMeters;
   @HiveField(2)
-  double? headDamage;
+  final double? headDamage;
   @HiveField(3)
-  int? bodyDamage;
+  final int? bodyDamage;
   @HiveField(4)
-  double? legDamage;
+  final double? legDamage;
 
   DamageRanges({
     this.rangeStartMeters,
@@ -195,25 +195,25 @@ class DamageRanges {
 @JsonSerializable()
 class ShopData {
   @HiveField(0)
-  int? cost;
+  final int? cost;
   @HiveField(1)
-  String? category;
+  final String? category;
   @HiveField(2)
-  int? shopOrderPriority;
+  final int? shopOrderPriority;
   @HiveField(3)
-  String? categoryText;
+  final String? categoryText;
   @HiveField(4)
-  GridPosition? gridPosition;
+  final GridPosition? gridPosition;
   @HiveField(5)
-  bool? canBeTrashed;
+  final bool? canBeTrashed;
   @HiveField(6)
-  String? image;
+  final String? image;
   @HiveField(7)
-  String? newImage;
+  final String? newImage;
   @HiveField(8)
-  String? newImage2;
+  final String? newImage2;
   @HiveField(9)
-  String? assetPath;
+  final String? assetPath;
 
   ShopData({
     this.cost,
@@ -236,9 +236,9 @@ class ShopData {
 @JsonSerializable()
 class GridPosition {
   @HiveField(0)
-  int? row;
+  final int? row;
   @HiveField(1)
-  int? column;
+  final int? column;
 
   GridPosition({
     this.row,
@@ -253,23 +253,23 @@ class GridPosition {
 @JsonSerializable()
 class Skins {
   @HiveField(0)
-  String? uuid;
+  final String? uuid;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? themeUuid;
+  final String? themeUuid;
   @HiveField(3)
-  String? contentTierUuid;
+  final String? contentTierUuid;
   @HiveField(4)
-  String? displayIcon;
+  final String? displayIcon;
   @HiveField(5)
-  String? wallpaper;
+  final String? wallpaper;
   @HiveField(6)
-  String? assetPath;
+  final String? assetPath;
   @HiveField(7)
-  List<Chromas>? chromas;
+  final List<Chromas>? chromas;
   @HiveField(8)
-  List<Levels>? levels;
+  final List<Levels>? levels;
 
   Skins({
     this.uuid,
@@ -290,19 +290,19 @@ class Skins {
 @JsonSerializable()
 class Chromas {
   @HiveField(0)
-  String? uuid;
+  final String? uuid;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? displayIcon;
+  final String? displayIcon;
   @HiveField(3)
-  String? fullRender;
+  final String? fullRender;
   @HiveField(4)
-  String? swatch;
+  final String? swatch;
   @HiveField(5)
-  String? streamedVideo;
+  final String? streamedVideo;
   @HiveField(6)
-  String? assetPath;
+  final String? assetPath;
 
   Chromas({
     this.uuid,
@@ -322,17 +322,17 @@ class Chromas {
 @JsonSerializable()
 class Levels {
   @HiveField(0)
-  String? uuid;
+  final String? uuid;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? levelItem;
+  final String? levelItem;
   @HiveField(3)
-  String? displayIcon;
+  final String? displayIcon;
   @HiveField(4)
-  String? streamedVideo;
+  final String? streamedVideo;
   @HiveField(5)
-  String? assetPath;
+  final String? assetPath;
 
   Levels({
     this.uuid,

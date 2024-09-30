@@ -21,6 +21,7 @@ class MapsListViewItem extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: map.splash ?? 'n/a',
               errorWidget: (context, url, error) => const Icon(Icons.error),
+              fit: BoxFit.cover,
               memCacheWidth: (MediaQuery.of(context).size.width *
                       MediaQuery.of(context).devicePixelRatio)
                   .round(),

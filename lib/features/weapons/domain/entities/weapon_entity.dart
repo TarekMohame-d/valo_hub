@@ -8,21 +8,21 @@ part 'weapon_entity.g.dart';
 @HiveType(typeId: 4)
 class WeaponEntity {
   @HiveField(0)
-  String? uuid;
+  final String? uuid;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? category;
+  final String? category;
   @HiveField(3)
-  String? displayIcon;
+  final String? displayIcon;
   @HiveField(4)
-  String? killStreamIcon;
+  final String? killStreamIcon;
   @HiveField(5)
-  WeaponStats? weaponStats;
+  final WeaponStats? weaponStats;
   @HiveField(6)
-  ShopData? shopData;
+  final ShopData? shopData;
   @HiveField(7)
-  List<Skins>? skins;
+  final List<Skins>? skins;
 
   WeaponEntity({
     this.uuid,

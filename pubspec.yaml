@@ -51,6 +51,8 @@ dependencies:
   # Classes and helper functions that support JSON code generation via the `json_serializable
   json_annotation: ^4.9.0
 
+  path_provider: ^2.1.4
+
   intl: ^0.18.0
 
   cupertino_icons: ^1.0.8

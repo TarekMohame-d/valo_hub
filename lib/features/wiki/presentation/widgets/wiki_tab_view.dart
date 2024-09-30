@@ -5,6 +5,8 @@ import 'package:valo_hub/features/agents/presentation/cubit/agents_cubit.dart';
 import 'package:valo_hub/features/agents/presentation/screens/agents_tab_screen.dart';
 import 'package:valo_hub/features/maps/presentation/cubit/maps_cubit.dart';
 import 'package:valo_hub/features/maps/presentation/screens/maps_tab_screen.dart';
+import 'package:valo_hub/features/player_cards/presentation/cubit/player_cards_cubit.dart';
+import 'package:valo_hub/features/player_cards/presentation/screens/player_cards_tab_screen.dart';
 import 'package:valo_hub/features/weapons/presentation/cubit/weapons_cubit.dart';
 import 'package:valo_hub/features/weapons/presentation/screens/weapons_tab_screen.dart';
 
@@ -28,7 +30,11 @@ class WikiTabView extends StatelessWidget {
           create: (context) => MapsCubit(getIt())..getMaps(),
           child: const MapsTabScreen(),
         ),
-        const Center(child: Text('Cards')),
+        BlocProvider(
+          create: (context) =>
+              PlayerCardsCubit(getIt())..getPlayerCards(),
+          child: const PlayerCardsTabScreen(),
+        ),
         const Center(child: Text('GameModes')),
         const Center(child: Text('Sprays')),
       ],

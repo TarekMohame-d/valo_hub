@@ -6,9 +6,9 @@ part 'agents_model.g.dart';
 
 @JsonSerializable()
 class AgentsModel {
-  int? status;
+  final int? status;
   @JsonKey(name: 'data')
-  List<AgentData>? agentData;
+  final List<AgentData>? agentData;
 
   AgentsModel({
     this.status,
@@ -21,29 +21,29 @@ class AgentsModel {
 
 @JsonSerializable()
 class AgentData {
-  String? uuid;
-  String? displayName;
-  String? description;
-  String? developerName;
-  List<String>? characterTags;
-  String? displayIcon;
-  String? displayIconSmall;
-  String? bustPortrait;
-  String? fullPortrait;
-  String? fullPortraitV2;
+  final String? uuid;
+  final String? displayName;
+  final String? description;
+  final String? developerName;
+  final List<String>? characterTags;
+  final String? displayIcon;
+  final String? displayIconSmall;
+  final String? bustPortrait;
+  final String? fullPortrait;
+  final String? fullPortraitV2;
   @JsonKey(name: 'killfeedPortrait')
-  String? killFeedPortrait;
-  String? background;
-  List<String>? backgroundGradientColors;
-  String? assetPath;
-  bool? isFullPortraitRightFacing;
-  bool? isPlayableCharacter;
-  bool? isAvailableForTest;
-  bool? isBaseContent;
-  Role? role;
-  RecruitmentData? recruitmentData;
-  List<Abilities>? abilities;
-  String? voiceLine;
+  final String? killFeedPortrait;
+  final String? background;
+  final List<String>? backgroundGradientColors;
+  final String? assetPath;
+  final bool? isFullPortraitRightFacing;
+  final bool? isPlayableCharacter;
+  final bool? isAvailableForTest;
+  final bool? isBaseContent;
+  final Role? role;
+  final RecruitmentData? recruitmentData;
+  final List<Abilities>? abilities;
+  final String? voiceLine;
 
   AgentData({
     this.uuid,
@@ -78,15 +78,15 @@ class AgentData {
 @JsonSerializable()
 class Role {
   @HiveField(0)
-  String? uuid;
+  final String? uuid;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? description;
+  final String? description;
   @HiveField(3)
-  String? displayIcon;
+  final String? displayIcon;
   @HiveField(4)
-  String? assetPath;
+  final String? assetPath;
 
   Role({
     this.uuid,
@@ -101,13 +101,13 @@ class Role {
 
 @JsonSerializable()
 class RecruitmentData {
-  String? counterId;
-  String? milestoneId;
-  int? milestoneThreshold;
-  bool? useLevelVpCostOverride;
-  int? levelVpCostOverride;
-  String? startDate;
-  String? endDate;
+  final String? counterId;
+  final String? milestoneId;
+  final int? milestoneThreshold;
+  final bool? useLevelVpCostOverride;
+  final int? levelVpCostOverride;
+  final String? startDate;
+  final String? endDate;
 
   RecruitmentData({
     this.counterId,
@@ -127,13 +127,13 @@ class RecruitmentData {
 @JsonSerializable()
 class Abilities {
   @HiveField(0)
-  String? slot;
+  final String? slot;
   @HiveField(1)
-  String? displayName;
+  final String? displayName;
   @HiveField(2)
-  String? description;
+  final String? description;
   @HiveField(3)
-  String? displayIcon;
+  final String? displayIcon;
 
   Abilities({
     this.slot,

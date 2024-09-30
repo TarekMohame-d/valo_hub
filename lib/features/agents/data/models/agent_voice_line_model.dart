@@ -7,7 +7,7 @@ part 'agent_voice_line_model.g.dart';
 
 @JsonSerializable()
 class AgentVoiceLineModel {
-  List<AgentVoice>? voices;
+  final List<AgentVoice>? voices;
 
   AgentVoiceLineModel({
     this.voices,
@@ -19,9 +19,9 @@ class AgentVoiceLineModel {
 
 @JsonSerializable()
 class AgentVoice {
-  String? quotes;
+  final String? quotes;
   @JsonKey(name: 'audio_links')
-  String? audioLink;
+  final String? audioLink;
 
   AgentVoice({
     this.quotes,
