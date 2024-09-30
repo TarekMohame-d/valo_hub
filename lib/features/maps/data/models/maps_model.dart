@@ -6,9 +6,9 @@ part 'maps_model.g.dart';
 
 @JsonSerializable()
 class MapsModel {
-  int? status;
+  final int? status;
   @JsonKey(name: 'data')
-  List<MapData>? mapsData;
+  final List<MapData>? mapsData;
 
   MapsModel({
     this.status,
@@ -21,25 +21,25 @@ class MapsModel {
 
 @JsonSerializable()
 class MapData {
-  String? uuid;
-  String? displayName;
-  String? narrativeDescription;
-  String? tacticalDescription;
-  String? coordinates;
-  String? displayIcon;
-  String? listViewIcon;
-  String? listViewIconTall;
-  String? splash;
-  String? stylizedBackgroundImage;
-  String? premierBackgroundImage;
-  String? assetPath;
-  String? mapUrl;
-  double? xMultiplier;
-  double? yMultiplier;
-  double? xScalarToAdd;
-  double? yScalarToAdd;
+  final String? uuid;
+  final String? displayName;
+  final String? narrativeDescription;
+  final String? tacticalDescription;
+  final String? coordinates;
+  final String? displayIcon;
+  final String? listViewIcon;
+  final String? listViewIconTall;
+  final String? splash;
+  final String? stylizedBackgroundImage;
+  final String? premierBackgroundImage;
+  final String? assetPath;
+  final String? mapUrl;
+  final double? xMultiplier;
+  final double? yMultiplier;
+  final double? xScalarToAdd;
+  final double? yScalarToAdd;
   @JsonKey(name: 'callouts')
-  List<CallOuts>? callOuts;
+  final List<CallOuts>? callOuts;
 
   MapData({
     this.uuid,
@@ -70,11 +70,11 @@ class MapData {
 @JsonSerializable()
 class CallOuts {
   @HiveField(0)
-  String? regionName;
+  final String? regionName;
   @HiveField(1)
-  String? superRegionName;
+  final String? superRegionName;
   @HiveField(2)
-  Location? location;
+  final Location? location;
 
   CallOuts({
     this.regionName,
@@ -90,9 +90,9 @@ class CallOuts {
 @JsonSerializable()
 class Location {
   @HiveField(0)
-  double? x;
+  final double? x;
   @HiveField(1)
-  double? y;
+  final double? y;
 
   Location({
     this.x,

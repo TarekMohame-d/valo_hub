@@ -4,12 +4,15 @@ import 'package:valo_hub/features/agents/domain/entities/agent_voice_entity.dart
 import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
 import 'package:valo_hub/features/maps/data/models/maps_model.dart';
 import 'package:valo_hub/features/maps/domain/entities/map_entity.dart';
+import 'package:valo_hub/features/player_cards/data/models/player_cards_model.dart';
+import 'package:valo_hub/features/player_cards/domain/entities/player_cards_entity.dart';
 import 'package:valo_hub/features/weapons/data/models/weapon_model.dart';
 import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
 
 class HiveHelper {
   /// Initialize Hive with adapters
   static Future<void> initHive() async {
+    // 20 adapters
     await Hive.initFlutter();
     Hive.registerAdapter(AgentsEntityAdapter());
     Hive.registerAdapter(RoleAdapter());
@@ -29,6 +32,9 @@ class HiveHelper {
     Hive.registerAdapter(CallOutsAdapter());
     Hive.registerAdapter(LocationAdapter());
     Hive.registerAdapter(MapEntityAdapter());
+    Hive.registerAdapter(PlayerCardsEntityAdapter());
+     Hive.registerAdapter(PlayerCardsModelAdapter());
+     Hive.registerAdapter(CardDataAdapter());
   }
 
   /// Save data to the box
@@ -154,6 +160,7 @@ class HiveBoxes {
   static const String agentsVoiceLinesBox = 'agentsVoiceLinesBox';
   static const String weaponsBox = 'weaponsBox';
   static const String mapsBox = 'mapsBox';
+  static const String playerCardsBox = 'playerCardsBox';
 }
 
 class HiveKeys {}

@@ -11,6 +11,11 @@ import 'package:valo_hub/features/maps/data/data_sources/maps_remote_data_source
 import 'package:valo_hub/features/maps/data/repository/maps_repo_impl.dart';
 import 'package:valo_hub/features/maps/domain/repository/maps_repo.dart';
 import 'package:valo_hub/features/maps/domain/usecases/get_maps_use_case.dart';
+import 'package:valo_hub/features/player_cards/data/data_sources/player_cards_local_data_source.dart';
+import 'package:valo_hub/features/player_cards/data/data_sources/player_cards_remote_data_source.dart';
+import 'package:valo_hub/features/player_cards/data/repository/player_cards_repo_impl.dart';
+import 'package:valo_hub/features/player_cards/domain/repository/player_cards_repo.dart';
+import 'package:valo_hub/features/player_cards/domain/usecases/get_player_cards_use_case.dart';
 import 'package:valo_hub/features/weapons/data/data_sources/weapons_local_data_source.dart';
 import 'package:valo_hub/features/weapons/data/data_sources/weapons_remote_data_source.dart';
 import 'package:valo_hub/features/weapons/data/repository/weapons_repo_impl.dart';
@@ -62,4 +67,17 @@ void setupGetIt() {
   getIt.registerLazySingleton<MapsRepo>(() => MapsRepoImpl(getIt(), getIt()));
 
   getIt.registerLazySingleton<GetMapsUseCase>(() => GetMapsUseCase(getIt()));
+
+  // Player Cards services
+  getIt.registerLazySingleton<PlayerCardsRemoteDataSource>(
+      () => PlayerCardsRemoteDataSource(getIt()));
+
+  getIt.registerLazySingleton<PlayerCardsLocalDataSource>(
+      () => PlayerCardsLocalDataSource());
+
+  getIt.registerLazySingleton<PlayerCardsRepo>(
+      () => PlayerCardsRepoImpl(getIt(), getIt()));
+
+  getIt.registerLazySingleton<GetPlayerCardsUseCase>(
+      () => GetPlayerCardsUseCase(getIt()));
 }

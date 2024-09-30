@@ -6,9 +6,9 @@ part 'agent_voice_entity.g.dart';
 @HiveType(typeId: 3)
 class AgentVoiceEntity {
   @HiveField(0)
-  String? quotes;
+  final String? quotes;
   @HiveField(1)
-  String? audioLink;
+  final String? audioLink;
   
   AgentVoiceEntity({
     this.quotes,

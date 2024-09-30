@@ -21,8 +21,12 @@ class WeaponsItem extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 12.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          image: const DecorationImage(
-            image: AssetImage('assets/images/weapons_background.jpg'),
+          image: DecorationImage(
+            image: ResizeImage(
+              const AssetImage('assets/images/weapons_background.jpg'),
+              width: (200.w * MediaQuery.of(context).devicePixelRatio).round(),
+              height: (100.h * MediaQuery.of(context).devicePixelRatio).round(),
+            ),
             fit: BoxFit.cover,
             opacity: 0.5,
           ),

@@ -7,4 +7,5 @@ class SharedPrefKeys {
   static const String agentVoiceDBExpiration = 'agentVoiceDBExpiration';
   static const String weaponsDBExpiration = 'weaponsDBExpiration';
   static const String mapsDBExpiration = 'mapsDBExpiration';
+  static const String playerCardsDBExpiration = 'playerCardsDBExpiration';
 }
