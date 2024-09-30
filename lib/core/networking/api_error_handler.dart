@@ -30,7 +30,7 @@ class ApiErrorHandler {
           return ApiErrorModel(statusMessage: "Something went wrong");
       }
     } else {
-      return ApiErrorModel(statusMessage: "Unknown error occurred");
+      return ApiErrorModel(statusMessage: error.toString());
     }
   }
 

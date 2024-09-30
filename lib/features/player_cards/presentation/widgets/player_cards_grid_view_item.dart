@@ -7,8 +7,8 @@ import 'package:valo_hub/core/theme/app_colors.dart';
 import 'package:valo_hub/core/theme/app_text_styles.dart';
 import 'package:valo_hub/features/player_cards/domain/entities/player_cards_entity.dart';
 
-class PlayerCardsListViewItem extends StatelessWidget {
-  const PlayerCardsListViewItem({super.key, required this.playerCards});
+class PlayerCardsGridViewItem extends StatelessWidget {
+  const PlayerCardsGridViewItem({super.key, required this.playerCards});
   final PlayerCardsEntity playerCards;
   @override
   Widget build(BuildContext context) {
