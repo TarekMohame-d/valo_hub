@@ -516,12 +516,6 @@ WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) => WeaponModel(
           .toList(),
     );
 
-Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'data': instance.weaponsData,
-    };
-
 WeaponData _$WeaponDataFromJson(Map<String, dynamic> json) => WeaponData(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
@@ -540,20 +534,6 @@ WeaponData _$WeaponDataFromJson(Map<String, dynamic> json) => WeaponData(
           ?.map((e) => Skins.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
-
-Map<String, dynamic> _$WeaponDataToJson(WeaponData instance) =>
-    <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'category': instance.category,
-      'defaultSkinUuid': instance.defaultSkinUuid,
-      'displayIcon': instance.displayIcon,
-      'killStreamIcon': instance.killStreamIcon,
-      'assetPath': instance.assetPath,
-      'weaponStats': instance.weaponStats,
-      'shopData': instance.shopData,
-      'skins': instance.skins,
-    };
 
 WeaponStats _$WeaponStatsFromJson(Map<String, dynamic> json) => WeaponStats(
       fireRate: (json['fireRate'] as num?)?.toDouble(),
@@ -583,25 +563,6 @@ WeaponStats _$WeaponStatsFromJson(Map<String, dynamic> json) => WeaponStats(
           .toList(),
     );
 
-Map<String, dynamic> _$WeaponStatsToJson(WeaponStats instance) =>
-    <String, dynamic>{
-      'fireRate': instance.fireRate,
-      'magazineSize': instance.magazineSize,
-      'runSpeedMultiplier': instance.runSpeedMultiplier,
-      'equipTimeSeconds': instance.equipTimeSeconds,
-      'reloadTimeSeconds': instance.reloadTimeSeconds,
-      'firstBulletAccuracy': instance.firstBulletAccuracy,
-      'shotgunPelletCount': instance.shotgunPelletCount,
-      'wallPenetration': instance.wallPenetration,
-      'feature': instance.feature,
-      'fireMode': instance.fireMode,
-      'altFireType': instance.altFireType,
-      'adsStats': instance.adsStats,
-      'altShotgunStats': instance.altShotgunStats,
-      'airBurstStats': instance.airBurstStats,
-      'damageRanges': instance.damageRanges,
-    };
-
 AdsStats _$AdsStatsFromJson(Map<String, dynamic> json) => AdsStats(
       zoomMultiplier: (json['zoomMultiplier'] as num?)?.toDouble(),
       fireRate: (json['fireRate'] as num?)?.toDouble(),
@@ -610,37 +571,17 @@ AdsStats _$AdsStatsFromJson(Map<String, dynamic> json) => AdsStats(
       firstBulletAccuracy: (json['firstBulletAccuracy'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$AdsStatsToJson(AdsStats instance) => <String, dynamic>{
-      'zoomMultiplier': instance.zoomMultiplier,
-      'fireRate': instance.fireRate,
-      'runSpeedMultiplier': instance.runSpeedMultiplier,
-      'burstCount': instance.burstCount,
-      'firstBulletAccuracy': instance.firstBulletAccuracy,
-    };
-
 AltShotgunStats _$AltShotgunStatsFromJson(Map<String, dynamic> json) =>
     AltShotgunStats(
       shotgunPelletCount: (json['shotgunPelletCount'] as num?)?.toInt(),
       burstRate: (json['burstRate'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$AltShotgunStatsToJson(AltShotgunStats instance) =>
-    <String, dynamic>{
-      'shotgunPelletCount': instance.shotgunPelletCount,
-      'burstRate': instance.burstRate,
-    };
-
 AirBurstStats _$AirBurstStatsFromJson(Map<String, dynamic> json) =>
     AirBurstStats(
       shotgunPelletCount: (json['shotgunPelletCount'] as num?)?.toInt(),
       burstDistance: (json['burstDistance'] as num?)?.toDouble(),
     );
-
-Map<String, dynamic> _$AirBurstStatsToJson(AirBurstStats instance) =>
-    <String, dynamic>{
-      'shotgunPelletCount': instance.shotgunPelletCount,
-      'burstDistance': instance.burstDistance,
-    };
 
 DamageRanges _$DamageRangesFromJson(Map<String, dynamic> json) => DamageRanges(
       rangeStartMeters: (json['rangeStartMeters'] as num?)?.toInt(),
@@ -649,15 +590,6 @@ DamageRanges _$DamageRangesFromJson(Map<String, dynamic> json) => DamageRanges(
       bodyDamage: (json['bodyDamage'] as num?)?.toInt(),
       legDamage: (json['legDamage'] as num?)?.toDouble(),
     );
-
-Map<String, dynamic> _$DamageRangesToJson(DamageRanges instance) =>
-    <String, dynamic>{
-      'rangeStartMeters': instance.rangeStartMeters,
-      'rangeEndMeters': instance.rangeEndMeters,
-      'headDamage': instance.headDamage,
-      'bodyDamage': instance.bodyDamage,
-      'legDamage': instance.legDamage,
-    };
 
 ShopData _$ShopDataFromJson(Map<String, dynamic> json) => ShopData(
       cost: (json['cost'] as num?)?.toInt(),
@@ -674,29 +606,10 @@ ShopData _$ShopDataFromJson(Map<String, dynamic> json) => ShopData(
       assetPath: json['assetPath'] as String?,
     );
 
-Map<String, dynamic> _$ShopDataToJson(ShopData instance) => <String, dynamic>{
-      'cost': instance.cost,
-      'category': instance.category,
-      'shopOrderPriority': instance.shopOrderPriority,
-      'categoryText': instance.categoryText,
-      'gridPosition': instance.gridPosition,
-      'canBeTrashed': instance.canBeTrashed,
-      'image': instance.image,
-      'newImage': instance.newImage,
-      'newImage2': instance.newImage2,
-      'assetPath': instance.assetPath,
-    };
-
 GridPosition _$GridPositionFromJson(Map<String, dynamic> json) => GridPosition(
       row: (json['row'] as num?)?.toInt(),
       column: (json['column'] as num?)?.toInt(),
     );
-
-Map<String, dynamic> _$GridPositionToJson(GridPosition instance) =>
-    <String, dynamic>{
-      'row': instance.row,
-      'column': instance.column,
-    };
 
 Skins _$SkinsFromJson(Map<String, dynamic> json) => Skins(
       uuid: json['uuid'] as String?,
@@ -714,18 +627,6 @@ Skins _$SkinsFromJson(Map<String, dynamic> json) => Skins(
           .toList(),
     );
 
-Map<String, dynamic> _$SkinsToJson(Skins instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'themeUuid': instance.themeUuid,
-      'contentTierUuid': instance.contentTierUuid,
-      'displayIcon': instance.displayIcon,
-      'wallpaper': instance.wallpaper,
-      'assetPath': instance.assetPath,
-      'chromas': instance.chromas,
-      'levels': instance.levels,
-    };
-
 Chromas _$ChromasFromJson(Map<String, dynamic> json) => Chromas(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
@@ -736,16 +637,6 @@ Chromas _$ChromasFromJson(Map<String, dynamic> json) => Chromas(
       assetPath: json['assetPath'] as String?,
     );
 
-Map<String, dynamic> _$ChromasToJson(Chromas instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'displayIcon': instance.displayIcon,
-      'fullRender': instance.fullRender,
-      'swatch': instance.swatch,
-      'streamedVideo': instance.streamedVideo,
-      'assetPath': instance.assetPath,
-    };
-
 Levels _$LevelsFromJson(Map<String, dynamic> json) => Levels(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
@@ -754,12 +645,3 @@ Levels _$LevelsFromJson(Map<String, dynamic> json) => Levels(
       streamedVideo: json['streamedVideo'] as String?,
       assetPath: json['assetPath'] as String?,
     );
-
-Map<String, dynamic> _$LevelsToJson(Levels instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'levelItem': instance.levelItem,
-      'displayIcon': instance.displayIcon,
-      'streamedVideo': instance.streamedVideo,
-      'assetPath': instance.assetPath,
-    };

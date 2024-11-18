@@ -5,7 +5,7 @@ import 'package:valo_hub/features/player_cards/domain/entities/player_cards_enti
 part 'player_cards_model.g.dart';
 
 @HiveType(typeId: 19)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class PlayerCardsModel {
   @HiveField(0)
   final int? status;
@@ -23,7 +23,7 @@ class PlayerCardsModel {
 }
 
 @HiveType(typeId: 20)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class CardData {
   @HiveField(0)
   final String? uuid;

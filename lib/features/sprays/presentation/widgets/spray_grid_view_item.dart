@@ -12,7 +12,7 @@ class SprayGridViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       children: [
         CachedNetworkImage(
           imageUrl: spray.fullTransparentIcon ?? 'N/A',

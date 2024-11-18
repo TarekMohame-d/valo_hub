@@ -69,12 +69,6 @@ SprayModel _$SprayModelFromJson(Map<String, dynamic> json) => SprayModel(
           .toList(),
     );
 
-Map<String, dynamic> _$SprayModelToJson(SprayModel instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'data': instance.sprayData,
-    };
-
 SprayData _$SprayDataFromJson(Map<String, dynamic> json) => SprayData(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
@@ -93,22 +87,6 @@ SprayData _$SprayDataFromJson(Map<String, dynamic> json) => SprayData(
           .toList(),
     );
 
-Map<String, dynamic> _$SprayDataToJson(SprayData instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'category': instance.category,
-      'themeUuid': instance.themeUuid,
-      'isNullSpray': instance.isNullSpray,
-      'hideIfNotOwned': instance.hideIfNotOwned,
-      'displayIcon': instance.displayIcon,
-      'fullIcon': instance.fullIcon,
-      'fullTransparentIcon': instance.fullTransparentIcon,
-      'animationPng': instance.animationPng,
-      'animationGif': instance.animationGif,
-      'assetPath': instance.assetPath,
-      'levels': instance.levels,
-    };
-
 Levels _$LevelsFromJson(Map<String, dynamic> json) => Levels(
       uuid: json['uuid'] as String?,
       sprayLevel: (json['sprayLevel'] as num?)?.toInt(),
@@ -116,11 +94,3 @@ Levels _$LevelsFromJson(Map<String, dynamic> json) => Levels(
       displayIcon: json['displayIcon'] as String?,
       assetPath: json['assetPath'] as String?,
     );
-
-Map<String, dynamic> _$LevelsToJson(Levels instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'sprayLevel': instance.sprayLevel,
-      'displayName': instance.displayName,
-      'displayIcon': instance.displayIcon,
-      'assetPath': instance.assetPath,
-    };

@@ -4,7 +4,7 @@ import 'package:valo_hub/features/agents/domain/entities/agents_entity.dart';
 
 part 'agents_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AgentsModel {
   final int? status;
   @JsonKey(name: 'data')
@@ -19,7 +19,7 @@ class AgentsModel {
       _$AgentsModelFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AgentData {
   final String? uuid;
   final String? displayName;
@@ -75,7 +75,7 @@ class AgentData {
 }
 
 @HiveType(typeId: 1)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Role {
   @HiveField(0)
   final String? uuid;
@@ -99,7 +99,7 @@ class Role {
   factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class RecruitmentData {
   final String? counterId;
   final String? milestoneId;
@@ -124,7 +124,7 @@ class RecruitmentData {
 }
 
 @HiveType(typeId: 2)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Abilities {
   @HiveField(0)
   final String? slot;

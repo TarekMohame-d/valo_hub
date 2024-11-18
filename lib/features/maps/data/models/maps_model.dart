@@ -4,7 +4,7 @@ import 'package:valo_hub/features/maps/domain/entities/map_entity.dart';
 
 part 'maps_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MapsModel {
   final int? status;
   @JsonKey(name: 'data')
@@ -19,7 +19,7 @@ class MapsModel {
       _$MapsModelFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MapData {
   final String? uuid;
   final String? displayName;
@@ -67,7 +67,7 @@ class MapData {
 }
 
 @HiveType(typeId: 16)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class CallOuts {
   @HiveField(0)
   final String? regionName;
@@ -87,7 +87,7 @@ class CallOuts {
 }
 
 @HiveType(typeId: 17)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Location {
   @HiveField(0)
   final double? x;

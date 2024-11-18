@@ -4,7 +4,7 @@ import 'package:valo_hub/features/weapons/domain/entities/weapon_entity.dart';
 
 part 'weapon_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class WeaponModel {
   final int? status;
   @JsonKey(name: 'data')
@@ -19,7 +19,7 @@ class WeaponModel {
       _$WeaponModelFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class WeaponData {
   final String? uuid;
   final String? displayName;
@@ -50,7 +50,7 @@ class WeaponData {
 }
 
 @HiveType(typeId: 5)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class WeaponStats {
   @HiveField(0)
   final double? fireRate;
@@ -106,7 +106,7 @@ class WeaponStats {
 }
 
 @HiveType(typeId: 6)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AdsStats {
   @HiveField(0)
   final double? zoomMultiplier;
@@ -132,7 +132,7 @@ class AdsStats {
 }
 
 @HiveType(typeId: 7)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AltShotgunStats {
   @HiveField(0)
   final int? shotgunPelletCount;
@@ -149,7 +149,7 @@ class AltShotgunStats {
 }
 
 @HiveType(typeId: 8)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AirBurstStats {
   @HiveField(0)
   final int? shotgunPelletCount;
@@ -166,7 +166,7 @@ class AirBurstStats {
 }
 
 @HiveType(typeId: 9)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class DamageRanges {
   @HiveField(0)
   final int? rangeStartMeters;
@@ -192,7 +192,7 @@ class DamageRanges {
 }
 
 @HiveType(typeId: 10)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class ShopData {
   @HiveField(0)
   final int? cost;
@@ -233,7 +233,7 @@ class ShopData {
 }
 
 @HiveType(typeId: 11)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class GridPosition {
   @HiveField(0)
   final int? row;
@@ -250,7 +250,7 @@ class GridPosition {
 }
 
 @HiveType(typeId: 12)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Skins {
   @HiveField(0)
   final String? uuid;
@@ -287,7 +287,7 @@ class Skins {
 }
 
 @HiveType(typeId: 13)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Chromas {
   @HiveField(0)
   final String? uuid;
@@ -319,7 +319,7 @@ class Chromas {
 }
 
 @HiveType(typeId: 14)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Levels {
   @HiveField(0)
   final String? uuid;

@@ -5,7 +5,7 @@ import 'package:valo_hub/features/agents/domain/entities/agent_voice_entity.dart
 
 part 'agent_voice_line_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AgentVoiceLineModel {
   final List<AgentVoice>? voices;
 
@@ -17,7 +17,7 @@ class AgentVoiceLineModel {
       _$AgentVoiceLineModelFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class AgentVoice {
   final String? quotes;
   @JsonKey(name: 'audio_links')

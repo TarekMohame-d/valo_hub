@@ -13,19 +13,7 @@ AgentVoiceLineModel _$AgentVoiceLineModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$AgentVoiceLineModelToJson(
-        AgentVoiceLineModel instance) =>
-    <String, dynamic>{
-      'voices': instance.voices,
-    };
-
 AgentVoice _$AgentVoiceFromJson(Map<String, dynamic> json) => AgentVoice(
       quotes: json['quotes'] as String?,
       audioLink: json['audio_links'] as String?,
     );
-
-Map<String, dynamic> _$AgentVoiceToJson(AgentVoice instance) =>
-    <String, dynamic>{
-      'quotes': instance.quotes,
-      'audio_links': instance.audioLink,
-    };

@@ -94,11 +94,6 @@ MapsModel _$MapsModelFromJson(Map<String, dynamic> json) => MapsModel(
           .toList(),
     );
 
-Map<String, dynamic> _$MapsModelToJson(MapsModel instance) => <String, dynamic>{
-      'status': instance.status,
-      'data': instance.mapsData,
-    };
-
 MapData _$MapDataFromJson(Map<String, dynamic> json) => MapData(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
@@ -122,27 +117,6 @@ MapData _$MapDataFromJson(Map<String, dynamic> json) => MapData(
           .toList(),
     );
 
-Map<String, dynamic> _$MapDataToJson(MapData instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'narrativeDescription': instance.narrativeDescription,
-      'tacticalDescription': instance.tacticalDescription,
-      'coordinates': instance.coordinates,
-      'displayIcon': instance.displayIcon,
-      'listViewIcon': instance.listViewIcon,
-      'listViewIconTall': instance.listViewIconTall,
-      'splash': instance.splash,
-      'stylizedBackgroundImage': instance.stylizedBackgroundImage,
-      'premierBackgroundImage': instance.premierBackgroundImage,
-      'assetPath': instance.assetPath,
-      'mapUrl': instance.mapUrl,
-      'xMultiplier': instance.xMultiplier,
-      'yMultiplier': instance.yMultiplier,
-      'xScalarToAdd': instance.xScalarToAdd,
-      'yScalarToAdd': instance.yScalarToAdd,
-      'callouts': instance.callOuts,
-    };
-
 CallOuts _$CallOutsFromJson(Map<String, dynamic> json) => CallOuts(
       regionName: json['regionName'] as String?,
       superRegionName: json['superRegionName'] as String?,
@@ -151,18 +125,7 @@ CallOuts _$CallOutsFromJson(Map<String, dynamic> json) => CallOuts(
           : Location.fromJson(json['location'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CallOutsToJson(CallOuts instance) => <String, dynamic>{
-      'regionName': instance.regionName,
-      'superRegionName': instance.superRegionName,
-      'location': instance.location,
-    };
-
 Location _$LocationFromJson(Map<String, dynamic> json) => Location(
       x: (json['x'] as num?)?.toDouble(),
       y: (json['y'] as num?)?.toDouble(),
     );
-
-Map<String, dynamic> _$LocationToJson(Location instance) => <String, dynamic>{
-      'x': instance.x,
-      'y': instance.y,
-    };

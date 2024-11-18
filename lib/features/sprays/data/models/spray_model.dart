@@ -4,7 +4,7 @@ import 'package:valo_hub/features/sprays/domain/entities/spray_entity.dart';
 
 part 'spray_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class SprayModel {
   final int? status;
   @JsonKey(name: 'data')
@@ -20,7 +20,7 @@ class SprayModel {
 }
 
 @HiveType(typeId: 22)
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class SprayData {
   @HiveField(0)
   final String? uuid;
@@ -64,7 +64,7 @@ class SprayData {
       _$SprayDataFromJson(json);
 }
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Levels {
   final String? uuid;
   final int? sprayLevel;

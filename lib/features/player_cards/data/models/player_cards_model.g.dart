@@ -113,12 +113,6 @@ PlayerCardsModel _$PlayerCardsModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$PlayerCardsModelToJson(PlayerCardsModel instance) =>
-    <String, dynamic>{
-      'status': instance.status,
-      'data': instance.cardData,
-    };
-
 CardData _$CardDataFromJson(Map<String, dynamic> json) => CardData(
       uuid: json['uuid'] as String?,
       displayName: json['displayName'] as String?,
@@ -130,15 +124,3 @@ CardData _$CardDataFromJson(Map<String, dynamic> json) => CardData(
       largeArt: json['largeArt'] as String?,
       assetPath: json['assetPath'] as String?,
     );
-
-Map<String, dynamic> _$CardDataToJson(CardData instance) => <String, dynamic>{
-      'uuid': instance.uuid,
-      'displayName': instance.displayName,
-      'isHiddenIfNotOwned': instance.isHiddenIfNotOwned,
-      'themeUuid': instance.themeUuid,
-      'displayIcon': instance.displayIcon,
-      'smallArt': instance.smallArt,
-      'wideArt': instance.wideArt,
-      'largeArt': instance.largeArt,
-      'assetPath': instance.assetPath,
-    };
